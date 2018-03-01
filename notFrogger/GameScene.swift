@@ -9,17 +9,22 @@
 import SpriteKit
 import GameplayKit
 
+
+
 class GameScene: SKScene {
     
     let stripe: SKSpriteNode? = nil
     
     
     override func didMove(to view: SKView) {
-        
         makeBackground()
         makeBoard(rows: 3, cols: 3)
-       
         makePlayer()
+        makeStartingPoints()
+        run(SKAction.repeatForever(
+            SKAction.sequence([ SKAction.run(makeCar), SKAction.wait(forDuration: 1.0) ])
+        ))
+        // makeCar()
         
     }
     
@@ -39,20 +44,132 @@ class GameScene: SKScene {
         let size = CGSize(width: 40, height: 40)
         let box = SKSpriteNode(color: color, size: size)
         
-        scene?.addChild(box)
+        addChild(box)
         
         box.position.x = screenW / 2
         box.position.y = screenH / 2
     }
     
-    // make cars
     
+    // Start spawning cars.
+   
+    
+    
+    // make cars
+    func makeCar() {
+        // Makes a black square
+        let startPoint = randomizeStart()
+        let endPoint: CGPoint!
+        
+        let screenW = self.size.width
+        let screenH = self.size.height
+        
+        // let endPoint = CGPoint(x: screenW, y: screenH / 2)
+        if startPoint.x == -50 {
+            // The car drives right
+            let x = screenW
+            let y = startPoint.y
+            endPoint = CGPoint(x: x, y: y)
+            
+        } else if startPoint.y == -50 {
+            // The car drives up
+            let x = startPoint.x
+            let y = screenH
+            endPoint = CGPoint(x: x, y: y)
+            
+        } else if startPoint.x == screenW {
+            // The car drives left
+            let x = CGFloat(-50)
+            let y = startPoint.y
+            endPoint = CGPoint(x: x, y: y)
+            
+        } else {
+            // The car drives down
+            let x = startPoint.x
+            let y = CGFloat(-50)
+            endPoint = CGPoint(x: x, y: y)
+        }
+
+        // black boxes that move across the screen
+        let color = UIColor.black
+        let size = CGSize(width: 40, height: 40)
+        let car = SKSpriteNode(color: color, size: size)
+        
+        addChild(car)
+        
+        car.position = startPoint
+        moveCar(car: car, endPoint: endPoint)
+    }
+    
+    // move the car across the screen
+    func moveCar(car: SKSpriteNode, endPoint: CGPoint) {
+        let carPathAction = SKAction.move(to: endPoint, duration: 3)
+        let car = car
+        let removeAction = SKAction.run(car.removeFromParent)
+        let moveAndRemoveSequence = SKAction.sequence([carPathAction, removeAction])
+        car.run(moveAndRemoveSequence)
+    }
+    
+    // starting points and ending points
+    
+    var startPoints = [CGPoint]()
+    
+    func makeStartingPoints() {
+        // use loop to append to startpoints array
+        
+        let screenW = size.width
+        let screenH = size.height
+        
+        for i in -1 ... 1 {
+
+            // create all the leftRow start points
+            let x = CGFloat(-50)
+            let y = CGFloat(screenH / 2) + (65 * CGFloat(i))
+            let point = CGPoint(x: x, y: y)
+            startPoints.append(point)
+        }
+        
+        for j in -1 ... 1 {
+            
+            // create all the bottomColumn start points
+            let x = CGFloat(screenW / 2) + (65 * CGFloat(j))
+            let y = CGFloat(-50)
+            let point = CGPoint(x: x, y: y)
+            
+            startPoints.append(point)
+        }
+        
+        for k in -1 ... 1 {
+            // create all the rightRow start points
+            let x = CGFloat(screenW + 50)
+            let y = CGFloat(screenH / 2) + (65 * CGFloat(k))
+            let point = CGPoint(x: x, y: y)
+            
+            startPoints.append(point)
+        }
+        for l in -1 ... 1 {
+            // create all the topColumn start points
+            let x = CGFloat(screenW / 2) + (65 * CGFloat(l))
+            let y = CGFloat(screenH + 50)
+            let point = CGPoint(x: x, y: y)
+            
+            startPoints.append(point)
+        }
+        print(startPoints)
+    }
+    
+    // randomize the starting point
+    func randomizeStart() -> CGPoint {
+        let start = startPoints[Int(arc4random_uniform(UInt32(startPoints.count)))]
+        print(start)
+        return start
+    }
     
     func makeBoard(rows: Int, cols: Int) {
         let screenW = size.width
         let screenH = size.height
         
-        // make stripe
+        // make horizontal stripes
         for i in -1 ... 1 {
             let stripe = makeStripe(width: screenW, height: 60)
             addChild(stripe)
@@ -60,6 +177,7 @@ class GameScene: SKScene {
             stripe.position.y = screenH / 2 + (65 * CGFloat(i))
         }
         
+        // make vertical stripes
         for j in -1 ... 1 {
             let stripe = makeStripe(width: 60, height: screenH)
             addChild(stripe)
