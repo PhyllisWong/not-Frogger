@@ -10,11 +10,10 @@ import SpriteKit
 import GameplayKit
 
 
-
 class GameScene: SKScene {
     
     let stripe: SKSpriteNode? = nil
-    
+    var player: Player! = nil
     
     override func didMove(to view: SKView) {
         makeBackground()
@@ -24,7 +23,7 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(
             SKAction.sequence([ SKAction.run(makeCar), SKAction.wait(forDuration: 1.0) ])
         ))
-        // makeCar()
+        
         
     }
     
@@ -42,12 +41,32 @@ class GameScene: SKScene {
         
         let color = UIColor.red
         let size = CGSize(width: 40, height: 40)
-        let box = SKSpriteNode(color: color, size: size)
+        player = Player(color: color, size: size)
         
-        addChild(box)
+        addChild(player)
         
-        box.position.x = screenW / 2
-        box.position.y = screenH / 2
+        player.position.x = screenW / 2
+        player.position.y = screenH / 2
+    }
+    
+    func movePlayer(player: SKSpriteNode) {
+        // Player Move direction
+        var direction: Direction = .left {
+            didSet {
+                if direction == .left {
+                    player.position.x += 65
+                    
+                } else if direction == .right {
+                    player.position.x -= 65
+                    
+                } else if direction == .up {
+                    player.position.y += 65
+                    
+                } else {
+                    player.position.y -= 65
+                }
+            }
+        }
     }
     
     
@@ -79,7 +98,7 @@ class GameScene: SKScene {
             
         } else if startPoint.x == screenW {
             // The car drives left
-            let x = CGFloat(-50)
+            let x = CGFloat(0)
             let y = startPoint.y
             endPoint = CGPoint(x: x, y: y)
             
@@ -198,6 +217,21 @@ class GameScene: SKScene {
         background.position.x = screenW / 2
         background.position.y = screenH / 2
         addChild(background)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        
+        // Get touch position in scene
+        let location = touch!.location(in: self)
+        
+        // Check if touch was on left/right hand side of screen
+        if location.x > size.width / 2 {
+            player!.direction = .right
+        } else {
+            // character.side = .left
+        }
+        
     }
     
 }
