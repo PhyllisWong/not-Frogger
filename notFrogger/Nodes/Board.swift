@@ -38,13 +38,13 @@ class Board: SKNode {
     ///
     /// - Paremeter size: The size of the board which determiens the size of the stripes.
 
-    init(size: CGSize) {
+    /* init(size: CGSize) {
         super.inti()
         self.size = size
         self.name = "board"
         make()
         
-    }
+    } */
     
 }
 

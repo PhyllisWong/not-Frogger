@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91187982050866A00BD03D8 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91187972050866A00BD03D8 /* Stripe.swift */; };
 		B9286F4920504DC400F54CF5 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9286F4820504DC400F54CF5 /* Board.swift */; };
 		B9511FC12048CB88005338EA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9511FC02048CB88005338EA /* Player.swift */; };
 		B96F967E203F81B80065C0DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F967D203F81B80065C0DB /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B91187972050866A00BD03D8 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		B9286F4820504DC400F54CF5 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		B9511FC02048CB88005338EA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B96F967A203F81B80065C0DB /* notFrogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notFrogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				B9286F4820504DC400F54CF5 /* Board.swift */,
+				B91187972050866A00BD03D8 /* Stripe.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				B9511FC12048CB88005338EA /* Player.swift in Sources */,
 				B96F9684203F81B80065C0DB /* GameScene.swift in Sources */,
+				B91187982050866A00BD03D8 /* Stripe.swift in Sources */,
 				B9286F4920504DC400F54CF5 /* Board.swift in Sources */,
 				B96F9686203F81B80065C0DB /* GameViewController.swift in Sources */,
 				B96F967E203F81B80065C0DB /* AppDelegate.swift in Sources */,
