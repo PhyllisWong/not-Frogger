@@ -7,26 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9040C2B2051EAF6009D6947 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9040C2A2051EAF6009D6947 /* Car.swift */; };
+		B9040C2D2051EB54009D6947 /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9040C2C2051EB54009D6947 /* PhysicsCategories.swift */; };
+		B9040C312051EE91009D6947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9040C302051EE91009D6947 /* Main.storyboard */; };
 		B91187982050866A00BD03D8 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91187972050866A00BD03D8 /* Stripe.swift */; };
 		B9286F4920504DC400F54CF5 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9286F4820504DC400F54CF5 /* Board.swift */; };
 		B9511FC12048CB88005338EA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9511FC02048CB88005338EA /* Player.swift */; };
 		B96F967E203F81B80065C0DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F967D203F81B80065C0DB /* AppDelegate.swift */; };
 		B96F9684203F81B80065C0DB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F9683203F81B80065C0DB /* GameScene.swift */; };
 		B96F9686203F81B80065C0DB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F9685203F81B80065C0DB /* GameViewController.swift */; };
-		B96F9689203F81B80065C0DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96F9687203F81B80065C0DB /* Main.storyboard */; };
 		B96F968B203F81B80065C0DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96F968A203F81B80065C0DB /* Assets.xcassets */; };
 		B96F968E203F81B80065C0DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96F968C203F81B80065C0DB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9040C2A2051EAF6009D6947 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		B9040C2C2051EB54009D6947 /* PhysicsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
+		B9040C302051EE91009D6947 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B91187972050866A00BD03D8 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		B9286F4820504DC400F54CF5 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		B9511FC02048CB88005338EA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B9511FC02048CB88005338EA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
 		B96F967A203F81B80065C0DB /* notFrogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notFrogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96F967D203F81B80065C0DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B96F9683203F81B80065C0DB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B96F9685203F81B80065C0DB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B96F9688203F81B80065C0DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B96F968A203F81B80065C0DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96F968D203F81B80065C0DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B96F968F203F81B80065C0DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,8 +50,10 @@
 		B9286F4720504D7800F54CF5 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				B9286F4820504DC400F54CF5 /* Board.swift */,
+				B9511FC02048CB88005338EA /* Player.swift */,
+				B9040C2A2051EAF6009D6947 /* Car.swift */,
 				B91187972050866A00BD03D8 /* Stripe.swift */,
+				B9286F4820504DC400F54CF5 /* Board.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -72,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				B96F967D203F81B80065C0DB /* AppDelegate.swift */,
-				B96F9683203F81B80065C0DB /* GameScene.swift */,
-				B9511FC02048CB88005338EA /* Player.swift */,
+				B9040C2C2051EB54009D6947 /* PhysicsCategories.swift */,
 				B9286F4720504D7800F54CF5 /* Nodes */,
+				B96F9683203F81B80065C0DB /* GameScene.swift */,
 				B96F9685203F81B80065C0DB /* GameViewController.swift */,
-				B96F9687203F81B80065C0DB /* Main.storyboard */,
+				B9040C302051EE91009D6947 /* Main.storyboard */,
 				B96F968A203F81B80065C0DB /* Assets.xcassets */,
 				B96F968C203F81B80065C0DB /* LaunchScreen.storyboard */,
 				B96F968F203F81B80065C0DB /* Info.plist */,
@@ -143,7 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96F9689203F81B80065C0DB /* Main.storyboard in Resources */,
+				B9040C312051EE91009D6947 /* Main.storyboard in Resources */,
 				B96F968B203F81B80065C0DB /* Assets.xcassets in Resources */,
 				B96F968E203F81B80065C0DB /* LaunchScreen.storyboard in Resources */,
 			);
@@ -157,10 +163,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9511FC12048CB88005338EA /* Player.swift in Sources */,
+				B9040C2D2051EB54009D6947 /* PhysicsCategories.swift in Sources */,
 				B96F9684203F81B80065C0DB /* GameScene.swift in Sources */,
 				B91187982050866A00BD03D8 /* Stripe.swift in Sources */,
 				B9286F4920504DC400F54CF5 /* Board.swift in Sources */,
 				B96F9686203F81B80065C0DB /* GameViewController.swift in Sources */,
+				B9040C2B2051EAF6009D6947 /* Car.swift in Sources */,
 				B96F967E203F81B80065C0DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,14 +176,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B96F9687203F81B80065C0DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96F9688203F81B80065C0DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B96F968C203F81B80065C0DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

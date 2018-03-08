@@ -9,12 +9,9 @@
 import SpriteKit
 
 // Tracking touch for use with player movement
-enum Direction {
+enum Move {
     case left, right, up, down
 }
-
-
-
 
 class Player: SKSpriteNode {
     
@@ -22,15 +19,15 @@ class Player: SKSpriteNode {
     var player: Player!
     
     // Player Move direction
-    var direction: Direction = .left {
+    var move: Move = .left {
         didSet {
-            if direction == .left {
+            if move == .left {
                 self.position.x += 65
                 
-            } else if direction == .right {
+            } else if move == .right {
                 self.position.x -= 65
                 
-            } else if direction == .up {
+            } else if move == .up {
                 self.position.y += 65
                 
             } else {

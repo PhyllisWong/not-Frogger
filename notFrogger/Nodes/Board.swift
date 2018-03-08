@@ -27,7 +27,7 @@ class Stripes {
     }
 }
 
-/// The game board that provides Stripe nodes for Obstacles nodes to travel.
+/// The game board that provides Stripe nodes for Cars nodes to travel.
 class Board: SKNode {
     
     var stripes: Stripes!
