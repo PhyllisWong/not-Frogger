@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9040C322051F075009D6947 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B9040C302051EE91009D6947 /* Main.storyboard */,
+				B96F968C203F81B80065C0DB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		B9286F4720504D7800F54CF5 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,14 +86,13 @@
 		B96F967C203F81B80065C0DB /* notFrogger */ = {
 			isa = PBXGroup;
 			children = (
+				B9040C322051F075009D6947 /* Storyboards */,
 				B96F967D203F81B80065C0DB /* AppDelegate.swift */,
 				B9040C2C2051EB54009D6947 /* PhysicsCategories.swift */,
 				B9286F4720504D7800F54CF5 /* Nodes */,
 				B96F9683203F81B80065C0DB /* GameScene.swift */,
 				B96F9685203F81B80065C0DB /* GameViewController.swift */,
-				B9040C302051EE91009D6947 /* Main.storyboard */,
 				B96F968A203F81B80065C0DB /* Assets.xcassets */,
-				B96F968C203F81B80065C0DB /* LaunchScreen.storyboard */,
 				B96F968F203F81B80065C0DB /* Info.plist */,
 			);
 			path = notFrogger;

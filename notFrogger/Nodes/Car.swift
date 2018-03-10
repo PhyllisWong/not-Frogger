@@ -11,9 +11,10 @@ import SpriteKit
 enum Direction {
     case up, down
     
-    // Pick a random direction.
+    // Pick a random direction for the cars to drive
     static func random() -> Direction {
-        // pick and return a new value
+        
+        // pick and return a random value
         let randomInt = arc4random_uniform(2)
         
         switch randomInt {
@@ -27,7 +28,7 @@ enum Direction {
     }
 }
 
-/// The objects that will be traveling towards the player with extreme malice.
+/// The cars that will be traveling towards the player with extreme malice.
 class Car: SKSpriteNode {
     /// Initialize a SKSpriteNode and place it at given spawn point.
     /// - Parameters:
