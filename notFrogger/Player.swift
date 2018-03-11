@@ -19,13 +19,13 @@ class Player: SKSpriteNode {
     var player: Player!
     
     // Player can move these directions
-    var move: Move = .left {
+    var move: Move = .right {
         didSet {
-            if move == .left {
-                self.position.x -= 65
-                
-            } else if move == .right {
+            if move == .right {
                 self.position.x += 65
+                
+            } else if move == .left {
+                self.position.x -= 65
                 
             } else if move == .up {
                 self.position.y += 65
